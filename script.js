@@ -44,16 +44,30 @@ const divide = function(a, b) {
 
 let a = "";
 let operator = "";
-let b;
+let b = "";
 
 
 
 const defaultScreen = () => {
     screenText.innerText = "000000000000000000000"
     screenText.style.opacity = "0.2";
+    btnDecimal.disabled = false;
 }
 
 defaultScreen();
+
+btnDecimal.addEventListener("click", () => {
+    if(operator === "") {
+        a += ".";
+        screenText.innerText = a;
+    }else{
+        b += ".";
+        screenText.innerText = b;
+    }
+    console.log(a);
+    btnDecimal.disabled = true;
+
+})
 
 btnAllClear.addEventListener("click", () => {
     a = "";
@@ -66,12 +80,12 @@ numBtns.forEach((button) => {
     button.addEventListener("click", (event) => {
         if (operator === ""){
             a += Number(event.target.innerText);
-            console.log(parseInt(a));
+            console.log(Number(a));
             screenText.style.opacity = "1";
             screenText.innerText = a;
         } else {
             b += Number(event.target.innerText);
-            console.log(parseInt(b));
+            console.log(Number(b));
             screenText.style.opacity = "1";
             screenText.innerText = b;
         }
@@ -81,6 +95,7 @@ numBtns.forEach((button) => {
 operatorBtn.forEach((button)=> {
     button.addEventListener("click", (event) => {
         screenText.innerText = "";
+        btnDecimal.disabled = false;
         operator = event.target.innerText;
         console.log(operator)
     })
@@ -90,14 +105,15 @@ btnEquals.addEventListener("click", operate);
 
 function operate() {
     let result;
-    operandA = parseInt(a);
-    operandB = parseInt(b);
+    operandA = Number(a);
+    operandB = Number(b);
 
     if (operator === "/" && (operandB  === 0)) { 
         console.log("zero division ERROR")
         screenText.innerText = "ERROR";
-        a = '';
-        b = '';
+        a = "";
+        b = "";
+        operator = "";
         return;
     }
 
@@ -119,7 +135,7 @@ function operate() {
         default:
             result = "ERROR";
     }
-    screenText.innerText = result;
+    screenText.innerText = result.toFixed(2);
     a = result;
     b = "";
     //operator = "";
