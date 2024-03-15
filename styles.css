@@ -8,9 +8,59 @@
 }
 body {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     height: 450px;
     width: 270px;
+    border: 2px solid black;
+    background-color: var(--calc-body-color);
+    
+}
+
+#screen {
+    background-color: var(--screen-color);
+    height: 70px;
+    width: 75%;
+    margin: 20px auto;
+    color: var(--btn-orange-color);
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+#screen #screen-text {
+    opacity: 0.5;
+}
+
+#buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0px;
+    width: 73%;
+
+}
+
+.button {
+    background-color: var(--btn-grey-color);
+    height: 45px;
+    width: 45px;
+    margin: 2px;
+}
+
+#ac {
+    background-color: var(--btn-orange-color);
+}
+
+#minus, #divide, #multiply, #plus, #equals {
+    background-color: var(--btn-white-color)
 }
