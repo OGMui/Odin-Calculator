@@ -10,13 +10,120 @@ const btnMultiply = document.getElementById("multiply");
 const btnFour = document.getElementById("four");
 const btnFive = document.getElementById("five");
 const btnSix = document.getElementById("six");
-const btnMinus = document.getElementById("minus");
+const btnSubtract = document.getElementById("subtract");
 const btnOne = document.getElementById("one");
 const btnTwo = document.getElementById("two");
 const btnThree = document.getElementById("three");
-const btnPlus = document.getElementById("plus");
+const btnAdd = document.getElementById("add");
 const btnZero = document.getElementById("zero");
 const btnDecimal = document.getElementById("decimal");
 const btnEquals = document.getElementById("equals");
 
+const numBtns = document.querySelectorAll(".num")
+const operatorBtn = document.querySelectorAll(".operator");
+
+const add = function(a, b) {
+	return a + b;
+};
+
+const subtract = function(a, b) {
+	return a - b;
+};
+
+const sum = function(nums) {
+	return nums.reduce((a, b) => a + b, 0);
+};
+
+const multiply = function(a, b) {
+  return a * b;
+};
+
+const divide = function(a, b) {
+    return a / b;
+}
+
+let a = "";
+let operator = "";
+let b;
+
+
+
+const defaultScreen = () => {
+    screenText.innerText = "000000000000000000000"
+    screenText.style.opacity = "0.2";
+}
+
+defaultScreen();
+
+btnAllClear.addEventListener("click", () => {
+    a = "";
+    operator = "";
+    b = "";
+    defaultScreen();
+})
+
+numBtns.forEach((button) => {
+    button.addEventListener("click", (event) => {
+        if (operator === ""){
+            a += Number(event.target.innerText);
+            console.log(parseInt(a));
+            screenText.style.opacity = "1";
+            screenText.innerText = a;
+        } else {
+            b += Number(event.target.innerText);
+            console.log(parseInt(b));
+            screenText.style.opacity = "1";
+            screenText.innerText = b;
+        }
+    })
+});
+
+operatorBtn.forEach((button)=> {
+    button.addEventListener("click", (event) => {
+        screenText.innerText = "";
+        operator = event.target.innerText;
+        console.log(operator)
+    })
+})
+
+btnEquals.addEventListener("click", operate);
+
+function operate() {
+    let result;
+    operandA = parseInt(a);
+    operandB = parseInt(b);
+
+    if (operator === "/" && (operandB  === 0)) { 
+        console.log("zero division ERROR")
+        screenText.innerText = "ERROR";
+        a = '';
+        b = '';
+        return;
+    }
+
+    console.log(operandA, operator, operandB)
+
+    switch (operator) {
+        case "+":
+            result = add(operandA , operandB);
+            break;
+        case "-":
+            result = subtract(operandA , operandB);
+            break;
+        case "*":
+            result = multiply(operandA , operandB);
+            break;
+        case "/":
+            result = divide(operandA , operandB);
+            break;
+        default:
+            result = "ERROR";
+    }
+    screenText.innerText = result;
+    a = result;
+    b = "";
+    //operator = "";
+
+    console.log(a, operator, b)
+}
 
