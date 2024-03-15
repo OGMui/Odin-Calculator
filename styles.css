@@ -57,10 +57,10 @@ body {
     margin: 2px;
 }
 
-#ac {
+#all-clear {
     background-color: var(--btn-orange-color);
 }
 
-#minus, #divide, #multiply, #plus, #equals {
+.operator, #equals {
     background-color: var(--btn-white-color)
 }
