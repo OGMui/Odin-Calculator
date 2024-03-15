@@ -1,9 +1,19 @@
+@font-face {
+    font-family: 'digital-7';
+    src: url('fonts/digital-7%20(mono).ttf');
+}
+
 :root {
     --calc-body-color: #CECFC1;
+    --calc-body-shadow: #9D9C81;
     --screen-color: #0B0301;
     --btn-orange-color: #BF5410;
+    --btn-orange-highlight:#DB8422;
+    --btn-orange-click: #914808; 
     --btn-grey-color: #788378;
-    --btn-white-color: #FFFDF7;
+    --btn-white-color: #C1BCA8;
+    --btn-white-hover: #FFFDF7;
+    --btn-darkgrey-color: #3B3831;
 
 }
 body {
@@ -13,6 +23,13 @@ body {
     height: 100vh;
 }
 
+html{
+    background-image: radial-gradient(
+        var(--btn-orange-highlight),
+        var(--btn-orange-color)
+    );
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -20,25 +37,59 @@ body {
     align-items: center;
     height: 450px;
     width: 270px;
-    border: 2px solid black;
+    border: 1px solid var(--calc-body-shadow);
+    border-radius: 5px;
     background-color: var(--calc-body-color);
+    box-shadow: 0px 30px 20px var(--btn-orange-click);
     
+}
+#top {
+    background-image: linear-gradient(
+        0deg,
+        var(--calc-body-color) 0%, var(--calc-body-shadow) 5%, var(--calc-body-color) 30%, var(--calc-body-shadow) 22%, var(--calc-body-color) 0%);
+    ;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 #screen {
-    background-color: var(--screen-color);
-    height: 70px;
+    background-image: linear-gradient(
+        0deg,
+        black 62%,
+        #555 98%,
+        black     
+    );
+    height: 75px;
     width: 75%;
-    margin: 20px auto;
+    margin-bottom: 20px;
     color: var(--btn-orange-color);
     display: flex; 
     justify-content: center;
     align-items: center;
+    overflow: auto;
  
 }
 
 #screen #screen-text {
     opacity: 0.5;
+    font-family: "digital-7";
+    font-size: 1.9rem;
+    text-shadow: 2px 2px 2px #BF541070;
+}
+
+#logo {
+    border: 2px solid #3B3831;
+    width: 120px;    
+    padding: 10px 10px;
+    margin: 2px 2px;
+    font-family: "Red Hat Mono", monospace;
+    font-size: 11px;
+    color: #788378;
+    background-color: var(--calc-body-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #buttons {
@@ -47,20 +98,99 @@ body {
     flex-wrap: wrap;
     margin: 0px;
     width: 73%;
+    background-color: #3B3831;
+    border-style: inset;
+}
 
+.btn-top-row {
+    width: 100%;
+    display: flex;
 }
 
 .button {
-    background-color: var(--btn-grey-color);
+    background-image: linear-gradient(
+        90deg,
+        var(--btn-darkgrey-color),
+        var(--btn-grey-color)
+    );
     height: 45px;
     width: 45px;
     margin: 2px;
+    color: var(--calc-body-color);
+    font-family: "Red Hat Mono", monospace;
+    font-size: 18px;
+    outline-offset: 4px;
+    padding: 2px;
+}
+#button-inlay {
+    
+    background-image: linear-gradient(
+        -90deg,
+        var(--btn-darkgrey-color),
+        var(--btn-grey-color)
+    );
+    border-radius: 10px;
+    padding: 5px 5px;
+}
+
+#button-inlay:hover {
+    background-color: var(--btn-grey-color);
+    border-radius: 10px;
+    padding: 5px 5px;
+}
+
+.button:hover {
+    background-color: #82887E;
+}
+.button:active {
+    background-color: var(--btn-darkgrey-color);
 }
 
 #all-clear {
-    background-color: var(--btn-orange-color);
+    background-image: linear-gradient(
+        90deg,
+        var(--btn-orange-color),
+        #E4952D
+    );
+}
+
+#all-clear #button-inlay {
+    background-image: linear-gradient(
+        -90deg,
+        var(--btn-orange-color),
+        #E4952D
+    );
+}
+#all-clear:hover {
+    background-color: var(--btn-orange-highlight);
+}
+
+#all-clear:active {
+    background-color: var(--btn-orange-click);
 }
 
 .operator, #equals {
-    background-color: var(--btn-white-color)
+    background-image: linear-gradient(
+        -90deg,
+        var(--btn-white-hover),
+        var(--btn-white-color)
+    );
+    color: var(--btn-darkgrey-color);
+}
+
+.operator #button-inlay , #equals  #button-inlay {
+    background-image: linear-gradient(
+        90deg,
+        var(--btn-white-hover),
+        var(--btn-white-color)
+    );
+}
+
+.operator:active, #equals:active {
+    background-color: var(--btn-white-color);
+    color: var(--btn-darkgrey-color);
+}
+
+.operator:hover, #equals:hover {
+    background-color: var(--btn-white-hover);
 }

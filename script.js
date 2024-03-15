@@ -49,7 +49,7 @@ let b = "";
 
 
 const defaultScreen = () => {
-    screenText.innerText = "000000000000000000000"
+    screenText.innerText = "000000000000"
     screenText.style.opacity = "0.2";
     btnDecimal.disabled = false;
 }
@@ -126,16 +126,16 @@ function operate() {
         case "-":
             result = subtract(operandA , operandB);
             break;
-        case "*":
+        case "x":
             result = multiply(operandA , operandB);
             break;
-        case "/":
+        case "÷":
             result = divide(operandA , operandB);
             break;
         default:
             result = "ERROR";
     }
-    screenText.innerText = result.toFixed(2);
+    screenText.innerText = Number.isInteger(result) ?result : result.toFixed(2);
     a = result;
     b = "";
     //operator = "";

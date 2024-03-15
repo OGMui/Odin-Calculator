@@ -4,36 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
     <title>Odin Calculator</title>
 </head>
 <body>
     <div class="container">
-        <div id="screen">
-                <span id="screen-text">
+        
+        <div id="top">
+            
+            <div id="screen">
+                    <span id="screen-text">
                     
-                </span>
+                    </span>
+            </div>
         </div>
         <div id="buttons">
         
-            <button class="button" id="all-clear">AC</button>
-            <button class="button" id="pos-neg">+/-</button>
-            <button class="button" id="percent">%</button>
-            <button class="button operator" id="divide">/</button>
-            <button class="button num" id="seven">7</button>
-            <button class="button num" id="eight">8</button>
-            <button class="button num" id="nine">9</button>
-            <button class="button operator" id="multiply">*</button>
-            <button class="button num" id="four">4</button>
-            <button class="button num" id="five">5</button>
-            <button class="button num" id="six">6</button>
-            <button class="button operator" id="subtract">-</button>
-            <button class="button num" id="one">1</button>
-            <button class="button num" id="two">2</button>
-            <button class="button num" id="three">3</button>
-            <button class="button operator" id="add">+</button>
-            <button class="button num" id="zero">0</button>
-            <button class="button" id="decimal">.</button>
-            <button class="button" id="equals">=</button>
+            <div class="btn-top-row">
+                <button class="button" id="all-clear"><div id="button-inlay">AC</div></button>
+                <div id="logo"> Made by Ollie</div>
+            </div>
+            
+            <!-- <button class="button" id="pos-neg">+/-</button> -->
+            <!-- <button class="button" id="percent">%</button> -->
+            
+            <button class="button num" id="seven">
+                <div id="button-inlay">
+                    7
+                </div>
+            </button>
+            <button class="button num" id="eight">
+                <div id="button-inlay">
+                8
+                </div>
+            </button>
+            <button class="button num" id="nine">
+                <div id="button-inlay">
+                9
+                </div>
+            </button>
+            <button class="button operator" id="subtract">
+                <div id="button-inlay">
+                -
+                </div>
+            </button>
+           
+            <button class="button num" id="four">
+                <div id="button-inlay">
+                4
+                </div>
+            </button>
+            <button class="button num" id="five">
+                <div id="button-inlay">
+                5
+                </div>
+            </button>
+            <button class="button num" id="six">
+                <div id="button-inlay">
+                6
+                </div>
+            </button>
+            <button class="button operator" id="divide">
+                <div id="button-inlay">
+                ÷
+                </div>
+            
+            </button>
+            <button class="button num" id="one">
+                <div id="button-inlay">
+                1
+                </div>
+            </button>
+            <button class="button num" id="two">
+                <div id="button-inlay">
+                2
+                </div>
+            </button>
+            <button class="button num" id="three">
+                <div id="button-inlay">
+                3
+                </div>
+            </button>
+             <button class="button operator" id="multiply">
+                <div id="button-inlay">
+                x
+                </div>
+            </button>
+           
+            <button class="button num" id="zero">
+                <div id="button-inlay">
+                0
+                </div>
+            </button>
+            <button class="button" id="decimal">
+                <div id="button-inlay">
+                .
+                </div>
+            </button>
+            <button class="button" id="equals">
+                <div id="button-inlay">
+                =
+                </div>
+            </button>
+             <button class="button operator" id="add">
+                <div id="button-inlay">
+                +
+                </div>
+            </button>
+            
         
         </div>
 
