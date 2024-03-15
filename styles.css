@@ -1,0 +1,16 @@
+:root {
+    --calc-body-color: #CECFC1;
+    --screen-color: #0B0301;
+    --btn-orange-color: #BF5410;
+    --btn-grey-color: #788378;
+    --btn-white-color: #FFFDF7;
+
+}
+body {
+    display: flex;
+}
+
+.container {
+    height: 450px;
+    width: 270px;
+}
